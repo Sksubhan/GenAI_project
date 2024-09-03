@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        background-color:brown;
+        }
+        div{
+        margin-left:450px;
+        }
+        td{
+        color:Black;
+        }
+        input{
+        width:570px;
+        border: 1px solid black;
+        height:40px;
+        border-radius:10px;
+        box-shadow:1px 1px 10px grey;
+        }
+        #s{
+        width:100px;
+        margin-left:200px;
+        background-color:skyblue;
+
+        }
+        h4{
+        border:2px solid black;
+        width:700px;
+        margin-left:10px;
+        margin-right:auto;
+        height:1300px;
+        border-radius:10px;
+        background-color:white;
+
+        }
+        h4:hover{
+        box-shadow:1px 10px 28px grey;
+        transition:0.5s;
+        }
+        #s:hover{
+        box-shadow:1px 10px 28px grey;
+        transition:0.5s;
+        background-color:lightgreen;
+        
+        }
+
+    </style>
+</head>
+<body>
+<h1 style="color:white; box-shadow:0px 2px 0px grey; padding-left:700px">Generative AI Project </h1>
+<div>
+<form method="post" action="read">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td style="color:white; font-size:20px;">Enter your prompt :  </td>
+            <td><input type="text" required minlength="2" placeholder="Type your prompt" name="txt" value="{{ a }}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Generate" id="s"></td>
+        </tr>
+
+    </table>
+    {% if text %}
+    <h4> {{ text|safe }}</h4>
+    {% endif %}
+</form>
+    </div>
+</body>
+</html>
