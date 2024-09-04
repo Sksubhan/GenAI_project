@@ -9,7 +9,7 @@ def home(request):
         a = request.POST["txt"]
 
         # Configure the Generative AI API
-        genai.configure(api_key="AIzaSyCcnyvWjjeBaPlB8kKtkPSOdxX9p72zW8s")  # < --  API from gemini AI.
+        genai.configure(api_key="API key")  # < --  API from gemini AI.
         model = genai.GenerativeModel("gemini-pro")
 
         # Generate content using the AI model
